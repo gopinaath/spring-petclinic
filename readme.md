@@ -12,6 +12,11 @@ git clone https://github.com/gopinaath/spring-petclinic.git
 cd spring-petclinic
 ./mvnw package
 java -jar target/*.jar
+
+OR
+
+
+heroku local web
 ```
 
 You can then access petclinic here: http://localhost:8080/
