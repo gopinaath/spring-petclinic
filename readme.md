@@ -15,7 +15,7 @@ java -jar target/*.jar
 
 OR
 
-
+$ export PORT=8080
 heroku local web
 ```
 
