@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  post_build:
+    commands:
+      - mvn package
+      #TODO: TODO : externalize build output file names
+      - mv target/spring-petclinic-*.jar spring-petclinic.jar
+artifacts:
+  files:
+    - spring-petclinic.jar
+    - .ebextensions/**/*
