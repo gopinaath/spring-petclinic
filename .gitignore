@@ -11,3 +11,4 @@ target/*
 .vscode
 _site/
 .DS_Store
+env_local
