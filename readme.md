@@ -38,7 +38,7 @@ Use reference here: https://github.com/spring-guides/gs-spring-boot-docker
 docker build -t springio/spring-boot-petclinic-docker .
 docker run -p 8080:8080 springio/spring-boot-petclinic-docker
 
-docker run -e "JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,address=5005,server=y,suspend=n" -p 8080:8080 -p 5005:5005 -t springio/gs-spring-boot-docker
+docker run -e "JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,address=5005,server=y,suspend=n" -p 8080:8080 -p 5005:5005 -t springio/spring-boot-petclinic-docker
 
 
 ```
