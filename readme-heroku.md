@@ -45,6 +45,8 @@ Open Heroku application
 heroku open
 ```
 
+URL: https://spring-petclinic-240.herokuapp.com/
+
 Look at Heroku logs
 ```
 heroku logs --tail

@@ -12,3 +12,5 @@ target/*
 _site/
 .DS_Store
 env_local
+codebuild_local_output/*
+/codebuild_local_output

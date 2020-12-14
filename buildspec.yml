@@ -52,5 +52,3 @@ artifacts:
     - spring-petclinic.jar
     - .ebextensions/**/*
     - imagedefinitions.json
-
-  
