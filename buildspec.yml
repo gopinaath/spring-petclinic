@@ -32,6 +32,7 @@ phases:
       # Push commands for ecr-demo
 
       - echo Building the Docker image...
+      - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
       - docker build -t $REPOSITORY_URI/$IMAGE_REPO_NAME:latest .
       - docker tag $REPOSITORY_URI/$IMAGE_REPO_NAME:latest $REPOSITORY_URI/$IMAGE_REPO_NAME:$IMAGE_TAG
 
