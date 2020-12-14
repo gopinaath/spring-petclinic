@@ -2,6 +2,12 @@ version: 0.2
 # https://aws.amazon.com/blogs/devops/build-a-continuous-delivery-pipeline-for-your-container-images-with-amazon-ecr-as-source/
 # https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker-custom-image.html
 
+# https://docs.fossa.com/docs/aws-codebuild
+env:
+  parameter-store:
+    DOCKERHUB_PARAM_USERNAME: /CodeBuild/DOCKERHUB_USERNAME
+    DOCKERHUB_PARAM_PASSWORD: /CodeBuild/DOCKERHUB_PASSWORD
+
 phases:
   # install needed only for Docker Build.  Not needed for direct deploy of Jar file
   install:
@@ -32,7 +38,8 @@ phases:
       # Push commands for ecr-demo
 
       - echo Building the Docker image...
-      - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+      # - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+      - docker login --username $DOCKERHUB_PARAM_USERNAME --password $DOCKERHUB_PARAM_PASSWORD
       - docker build -t $REPOSITORY_URI/$IMAGE_REPO_NAME:latest .
       - docker tag $REPOSITORY_URI/$IMAGE_REPO_NAME:latest $REPOSITORY_URI/$IMAGE_REPO_NAME:$IMAGE_TAG
 
